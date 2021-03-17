@@ -1,3 +1,6 @@
+#ifndef LONGPOLL
+#define LONGPOLL
+
 #include <iostream>
 #include "simdjson.h"
 
@@ -5,9 +8,13 @@
 
 class LongPoll {
 public:
-	LongPoll();   
+	LongPoll(); 
+	std::string listen();
 private:
 	void get_server();
 	simdjson::dom::parser parser_;
 	std::string key_, server_, ts_;
+	const int timeout_ = 25;
 };
+
+#endif

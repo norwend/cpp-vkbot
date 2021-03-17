@@ -1,3 +1,6 @@
+#ifndef METHODS
+#define METHODS
+
 #include <cstring>
 #include <vector>
 #include <string>
@@ -23,5 +26,10 @@ private:
 
 
 namespace groups {
-	Method get_longpoll_server ("groups.getLongPollServer");
+	inline Method get_longpoll_server ("groups.getLongPollServer");
 }
+namespace messages {
+	inline Method send ("messages.send");
+}
+
+#endif
