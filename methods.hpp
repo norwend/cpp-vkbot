@@ -1,25 +1,27 @@
-#include <map>
+#include <cstring>
+#include <vector>
 #include <string>
 
 #include "net.hpp"
 #include "api.hpp"
+#include "utils.hpp"
 
 class Method {
 public:
-	std::map<std::string, std::string> params;
-	void method_link_init() {
-		method_link_ = api::vkurl + api::param_append + method_name_;
-		for (const auto& [key, value] : params) {
-			method_link_ += key + '=' + value + '&';
-		}
+	Method (std::string mn) : method_name_(mn) {
+		method_link_ = api::vkurl + method_name_+ '?'; // question mark for method parameters
 	}
-	Method (std::map<std::string, std::string> p) : params(p) {
-		method_link_init();
-		request(method_link_);
+	std::string execute(std::vector<std::pair<std::string, std::string>> params) {
+		method_link_ += params_append(params);
+		return request(method_link_);
 	}
-protected:
-	const std::string method_name_; 
+private:
+	std::string method_name_; 
 	std::string method_link_;
 };
 
 
+
+namespace groups {
+	Method get_longpoll_server ("groups.getLongPollServer");
+}
