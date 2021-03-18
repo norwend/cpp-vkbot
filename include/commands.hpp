@@ -11,3 +11,5 @@ class parser;
 
 void ping (const simdjson::dom::element& json);
 void pososi (const simdjson::dom::element& json);
+void avtomat (const simdjson::dom::element& json);
+void fotka (const simdjson::dom::element& json);

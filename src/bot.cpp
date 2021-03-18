@@ -13,6 +13,8 @@ void handle(LongPoll* lp) {
 	if (std::string(json["updates"].at(0)["type"]) == "message_new") {
 		std::async(std::launch::async, pososi, json);
 		std::async(std::launch::async, ping, json);
+		std::async(std::launch::async, avtomat, json);
+		std::async(std::launch::async, fotka, json);
 	}
 }
 

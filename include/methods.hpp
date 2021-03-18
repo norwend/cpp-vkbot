@@ -28,5 +28,8 @@ namespace groups {
 namespace messages {
 	inline Method send ("messages.send");
 }
+namespace photos {
+	inline Method search ("photos.search");
+}
 
 #endif
