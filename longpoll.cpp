@@ -16,7 +16,6 @@ void LongPoll::get_server() {
 
 std::string LongPoll::listen () {
 	std::string response = request(server_ + "?act=a_check&key=" + key_ + "&wait=" + std::to_string(timeout_) + "&mode=2" + "&ts=" + std::string(ts_));
-	std::cout << response << '\n';
 	get_server();
 	return response;
 }
