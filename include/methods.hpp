@@ -3,9 +3,7 @@
 
 #include <cstring>
 #include <vector>
-#include <string>
 
-#include "net.hpp"
 #include "api.hpp"
 #include "utils.hpp"
 
@@ -15,8 +13,7 @@ public:
 		method_link_ = api::vkurl + method_name_+ '?'; // question mark for method parameters
 	}
 	std::string execute(std::vector<std::pair<std::string, std::string>> params) {
-		method_link_ += params_append(params);
-		return request(method_link_);
+		return request(method_link_ + params_append(params));
 	}
 private:
 	std::string method_name_; 

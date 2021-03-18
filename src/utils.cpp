@@ -1,4 +1,11 @@
-#include "net.hpp"
+#include "utils.hpp"
+
+std::string params_append (const std::vector<std::pair<std::string, std::string>>& params) {
+	std::string appended = "";
+	for (const auto& [key, value] : params)
+		appended += key + '=' + value + '&';
+	return appended;
+}
 
 static size_t write(void *contents, size_t size, size_t nmemb, void *userp)
 {

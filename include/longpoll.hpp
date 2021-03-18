@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include "simdjson.h"
-
 #include "methods.hpp"
 
 class LongPoll {
