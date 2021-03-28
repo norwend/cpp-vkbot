@@ -1,10 +1,11 @@
 #ifndef UTILS
 #define UTILS
 
+#include <algorithm>
 #include <string>
 #include <vector>
-#include <curl/curl.h>
 #include <cstring>
+#include <curl/curl.h>
 
 std::string params_append (const std::vector<std::pair<std::string, std::string>>& params);
 std::string to_lower (std::string& data);
