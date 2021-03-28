@@ -1,3 +1,4 @@
 all:
-	g++ ./src/*.cpp -I./include/ -lcurl
+	curl --version
+	g++ ./src/*.cpp -I./include/ -L/usr/include -lcurl
 	mv a.out bot
