@@ -7,6 +7,12 @@ std::string params_append (const std::vector<std::pair<std::string, std::string>
 	return appended;
 }
 
+std::string to_lower (std::string& data) {
+	std::transform(data.begin(), data.end(), data.begin(), 
+	  [](unsigned char c){ return std::tolower(c); });
+	return data;
+}
+
 static size_t write(void *contents, size_t size, size_t nmemb, void *userp)
 {
     ((std::string*)userp)->append((char*)contents, size * nmemb);
