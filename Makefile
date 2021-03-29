@@ -7,4 +7,4 @@ libinstall:
 compile:
 	g++ ./src/*.cpp -I./include/ -lcurl -lpthread -std=c++17 -Wunused-result
 
-github: libistall compile
+github: libinstall compile
