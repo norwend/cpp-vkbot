@@ -14,6 +14,6 @@ You can find all the commands in __*src/commands.cpp*__ and __*include/commands.
 That's all for now.
 
 TODO:
-~~- [X] tolower() implementation~~
+- [X] tolower() implementation
 - [ ] performance optimization
 - [ ] decent interfaces for better commands
