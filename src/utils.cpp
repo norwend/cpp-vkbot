@@ -1,16 +1,20 @@
 #include "utils.hpp"
 
+static const std::locale utf8 ("ru_RU.UTF-8");
+
+std::string to_lower(std::string_view data) {
+	auto ss = string_conversion::to_wstring_(data.data());
+	for (auto& c : ss) {
+		c = std::tolower(c, utf8);
+	}
+	return string_conversion::to_string_(ss);
+}
+
 std::string params_append (const std::vector<std::pair<std::string, std::string>>& params) {
 	std::string appended = "";
 	for (const auto& [key, value] : params)
 		appended += key + '=' + value + '&';
 	return appended;
-}
-
-std::string to_lower (std::string&& data) {
-	std::transform(data.begin(), data.end(), data.begin(), 
-	  [](unsigned char c){ return std::tolower(c); });
-	return data;
 }
 
 static size_t write(void *contents, size_t size, size_t nmemb, void *userp)
