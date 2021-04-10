@@ -15,6 +15,10 @@ void handle(LongPoll* lp) {
 		std::async(std::launch::async, ping, json);
 		std::async(std::launch::async, avtomat, json);
 		std::async(std::launch::async, fotka, json);
+//		ping(json);
+//		pososi(json);
+//		avtomat(json);
+//		fotka(json);
 	}
 }
 
@@ -22,7 +26,7 @@ int main () {
 	LongPoll lp;
 	while (true) {
 		std::async(std::launch::async, handle, &lp);
-	//	handle(lp);
+		//handle(&lp);
 	}
 	return 0;
 }

@@ -5,6 +5,6 @@ libinstall:
 	sudo apt install libcurl4-openssl-dev
 
 compile:
-	g++ ./src/*.cpp -I./include/ -lcurl -lpthread -std=c++17 -Wunused-result
+	g++ ./src/*.cpp -I./include/ -lcurl -lpthread -std=c++17 -Wunused-result -march=native
 
 github: libinstall compile

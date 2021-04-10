@@ -23,7 +23,7 @@ static size_t write(void *contents, size_t size, size_t nmemb, void *userp)
     return size * nmemb;
 }
 
-std::string request(std::string url) {
+std::string request(const std::string& url) {
 	CURL* curl;
 	std::string answer;
 	curl = curl_easy_init();

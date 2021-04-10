@@ -28,7 +28,7 @@ private:
 std::string params_append (const std::vector<std::pair<std::string, std::string>>& params);
 std::string to_lower (std::string_view data);
 
-std::string request(std::string url);
+std::string request(const std::string& url);
 static size_t write(void *contents, size_t size, size_t nmemb, void *userp);
 
 #endif

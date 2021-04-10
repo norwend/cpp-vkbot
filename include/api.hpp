@@ -2,7 +2,7 @@
 #define API
 
 namespace api {
-	inline const char* vkurl = "https://api.vk.com/method/";
+	inline const char* vkurl = "";
 // поменять!
 	inline const char* token = "";
 	inline const int id = 0;
